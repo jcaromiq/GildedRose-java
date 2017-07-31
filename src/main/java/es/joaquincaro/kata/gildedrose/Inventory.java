@@ -24,29 +24,29 @@ public class Inventory {
 
 	public void updateQuality() {
 		for (Item item : items) {
-			updateSellIn(item);
-			updateQuality(item);
+			changeSellIn(item);
+			changeQuality(item);
 		}
 	}
 
-	private void updateQuality(Item item) {
+	private void changeQuality(Item item) {
 		switch (item.getName()) {
 			case "Aged Brie":
 				if (item.getQuality() < 50) {
-					increaseQualityByOne(item);
+					item.setQuality(item.getQuality() + 1);
 				}
 				if(item.getSellIn() < 0) {
-					increaseQualityByOne(item);
+					item.setQuality(item.getQuality() + 1);
 				}
 				break;
 			case "Backstage passes to a TAFKAL80ETC concert":
 				if (item.getQuality() < 50) {
-					increaseQualityByOne(item);
+					item.setQuality(item.getQuality() + 1);
 					if (item.getSellIn() < 10 && item.getQuality() < 50) {
-						increaseQualityByOne(item);
+						item.setQuality(item.getQuality() + 1);
 					}
 					if (item.getSellIn() < 5 && item.getQuality() < 50) {
-						increaseQualityByOne(item);
+						item.setQuality(item.getQuality() + 1);
 					}
 				}
 				if (item.getSellIn() < 0) {
@@ -66,16 +66,9 @@ public class Inventory {
 				}
 				break;
 		}
-
-
-
 	}
 
-	private void increaseQualityByOne(Item item) {
-		item.setQuality(item.getQuality() + 1);
-    }
-
-	private void updateSellIn(Item item) {
+	private void changeSellIn(Item item) {
 		if (item.getName() == "Sulfuras, Hand of Ragnaros") {
 			return;
 		}

@@ -8,7 +8,7 @@ This is a Java version of the Gilded Rose Kata
 
 * The 'master' branch contains the starting point for the kata.
 
-* The 'solution' branch is my solution for this kata
+* The 'XXX_approach' branch are my solution for this kata with different approaches
 
 
 # Original Description of the Gilded Rose

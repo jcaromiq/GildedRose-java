@@ -35,6 +35,9 @@ public class Inventory {
 				if (item.getQuality() < 50) {
 					increaseQualityByOne(item);
 				}
+				if(item.getSellIn() < 0) {
+					increaseQualityByOne(item);
+				}
 				break;
 			case "Backstage passes to a TAFKAL80ETC concert":
 				if (item.getQuality() < 50) {
@@ -46,32 +49,26 @@ public class Inventory {
 						increaseQualityByOne(item);
 					}
 				}
-				break;
-			default:
-				if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-					if (item.getQuality() > 0) {
-						item.setQuality(item.getQuality() - 1);
-					}
+				if (item.getSellIn() < 0) {
+					item.setQuality(0);
 				}
 				break;
-		}
+			case "Sulfuras, Hand of Ragnaros" :
 
 
-		if (item.getSellIn() < 0) {
-			if (item.getName() == "Aged Brie") {
-				increaseQualityByOne(item);
-			}
-			if (item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
-				item.setQuality(0);
-			} else {
+			default:
 				if (item.getQuality() > 0) {
-					if (item.getName() == "Sulfuras, Hand of Ragnaros") {
-						return;
-					}
 					item.setQuality(item.getQuality() - 1);
 				}
-			}
+
+				if (item.getSellIn() < 0) {
+					item.setQuality(item.getQuality() - 1);
+				}
+				break;
 		}
+
+
+
 	}
 
 	private void increaseQualityByOne(Item item) {

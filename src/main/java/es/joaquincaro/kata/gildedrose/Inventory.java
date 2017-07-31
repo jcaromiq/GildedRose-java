@@ -64,8 +64,7 @@ public class Inventory {
 							}
 						}
 					} else {
-						items[i].setQuality(items[i].getQuality()
-								- items[i].getQuality());
+						items[i].setQuality(0);
 					}
 				} else {
 					if (items[i].getQuality() < 50) {

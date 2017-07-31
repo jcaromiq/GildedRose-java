@@ -1,6 +1,6 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class BackStagePass extends GenericItem {
+public class BackStagePass extends GildItem {
     private Item item;
 
     public BackStagePass(Item item) {

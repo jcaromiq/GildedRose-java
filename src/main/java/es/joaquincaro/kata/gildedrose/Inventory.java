@@ -25,9 +25,9 @@ public class Inventory {
 
 	public void updateQuality() {
 		for (Item item : items) {
-			GenericItem genericItem = ItemsFactory.aNewFrom(item);
-			genericItem.changeSellIn();
-			genericItem.changeQuality();
+			GildItem gildItem = ItemsFactory.aNewFrom(item);
+			gildItem.changeSellIn();
+			gildItem.changeQuality();
 		}
 	}
 }

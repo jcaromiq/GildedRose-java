@@ -2,19 +2,19 @@ package es.joaquincaro.kata.gildedrose;
 
 
 public class ItemsFactory {
-    public static GenericItem aNewFrom(Item item) {
+    public static GildItem aNewFrom(Item item) {
         switch (item.getName()) {
             case "Aged Brie":
-                GenericItem agedBrie = new AgedBrie(item);
+                GildItem agedBrie = new AgedBrie(item);
                 return agedBrie;
             case "Backstage passes to a TAFKAL80ETC concert":
-                GenericItem backStagePass = new BackStagePass(item);
+                GildItem backStagePass = new BackStagePass(item);
                 return backStagePass;
             case "Sulfuras, Hand of Ragnaros" :
-                GenericItem sulfuras = new Sulfuras(item);
+                GildItem sulfuras = new Sulfuras(item);
                 return  sulfuras;
             default:
-                GenericItem generic = new GenericItem(item);
+                GildItem generic = new GildItem(item);
                 return  generic;
 
         }

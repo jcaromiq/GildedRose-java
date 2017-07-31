@@ -1,10 +1,10 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class GenericItem {
+public class GildItem {
 
     private Item item;
 
-    public GenericItem(Item item) {
+    public GildItem(Item item) {
 
         this.item = item;
     }

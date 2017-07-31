@@ -1,6 +1,6 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class AgedBrie extends GenericItem {
+public class AgedBrie extends GildItem {
     private Item item;
 
     public AgedBrie(Item item) {

@@ -1,19 +1,20 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class GenericItem {
+public class GlidedItem {
 
     private Item item;
 
-    public GenericItem(Item item) {
+    public GlidedItem(Item item) {
 
         this.item = item;
     }
 
-    public void changeSellIn() {
+    public GlidedItem changeSellIn() {
         item.setSellIn(item.getSellIn() - 1);
+        return this;
     }
 
-    public void changeQuality() {
+    public GlidedItem changeQuality() {
         if (item.getQuality() > 0) {
             item.setQuality(item.getQuality() - 1);
         }
@@ -21,6 +22,7 @@ public class GenericItem {
         if (item.getSellIn() < 0) {
             item.setQuality(item.getQuality() - 1);
         }
+        return this;
 
     }
 }

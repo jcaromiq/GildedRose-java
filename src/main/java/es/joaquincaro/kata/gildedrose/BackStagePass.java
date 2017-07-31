@@ -1,6 +1,6 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class BackStagePass extends GenericItem {
+public class BackStagePass extends GlidedItem {
     private Item item;
 
     public BackStagePass(Item item) {
@@ -9,12 +9,13 @@ public class BackStagePass extends GenericItem {
     }
 
     @Override
-    public void changeSellIn() {
+    public GlidedItem changeSellIn() {
         item.setSellIn(item.getSellIn() - 1);
+        return this;
     }
 
     @Override
-    public void changeQuality() {
+    public GlidedItem changeQuality() {
         if (item.getQuality() < 50) {
             item.setQuality(item.getQuality() + 1);
             if (item.getSellIn() < 10 && item.getQuality() < 50) {
@@ -27,5 +28,6 @@ public class BackStagePass extends GenericItem {
         if (item.getSellIn() < 0) {
             item.setQuality(0);
         }
+        return this;
     }
 }

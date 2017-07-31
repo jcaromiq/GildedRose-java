@@ -20,14 +20,11 @@ public class Inventory {
 					new Item("Conjured Mana Cake", 3, 6) 
 				};
 
-
 	}
 
 	public void updateQuality() {
 		for (Item item : items) {
-			GenericItem genericItem = ItemsFactory.aNewFrom(item);
-			genericItem.changeSellIn();
-			genericItem.changeQuality();
+			ItemsFactory.aNewFrom(item).changeSellIn().changeQuality();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class Sulfuras extends GenericItem {
+public class Sulfuras extends GlidedItem {
     private Item item;
 
     public Sulfuras(Item item) {
@@ -9,12 +9,13 @@ public class Sulfuras extends GenericItem {
     }
 
     @Override
-    public void changeSellIn() {
+    public GlidedItem changeSellIn() {
+        return this;
 
     }
 
     @Override
-    public void changeQuality() {
-
+    public GlidedItem changeQuality() {
+        return this;
     }
 }

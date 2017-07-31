@@ -1,5 +1,7 @@
 package es.joaquincaro.kata.gildedrose;
 
+import java.util.Arrays;
+
 public class Inventory {
 
 	private Item[] items;
@@ -24,8 +26,8 @@ public class Inventory {
 	}
 
 	public void updateQuality() {
-		for (Item item : items) {
-			ItemsFactory.aNewFrom(item).updateValues();
-		}
+		Arrays.stream(items)
+				.map(item -> ItemsFactory.aNewFrom(item))
+				.forEach(GildItem::updateValues);
 	}
 }

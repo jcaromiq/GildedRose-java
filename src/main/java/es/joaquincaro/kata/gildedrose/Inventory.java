@@ -19,6 +19,7 @@ public class Inventory {
 					new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
 					new Item("Conjured Mana Cake", 3, 6) 
 				};
+		
 
 	}
 

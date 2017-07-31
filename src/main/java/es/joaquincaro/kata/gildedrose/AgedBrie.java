@@ -1,10 +1,9 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class AgedBrie extends GildItem {
+public class AgedBrie implements GildItem {
     private Item item;
 
     public AgedBrie(Item item) {
-        super(item);
         this.item = item;
     }
 
@@ -21,5 +20,12 @@ public class AgedBrie extends GildItem {
         if(item.getSellIn() < 0) {
             item.setQuality(item.getQuality() + 1);
         }
+    }
+
+    @Override
+    public void updateValues() {
+        changeSellIn();
+        changeQuality();
+
     }
 }

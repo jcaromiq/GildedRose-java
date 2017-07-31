@@ -14,7 +14,7 @@ public class ItemsFactory {
                 GildItem sulfuras = new Sulfuras(item);
                 return  sulfuras;
             default:
-                GildItem generic = new GildItem(item);
+                GildItem generic = new CommonItem(item);
                 return  generic;
 
         }

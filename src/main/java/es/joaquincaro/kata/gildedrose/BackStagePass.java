@@ -1,10 +1,9 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class BackStagePass extends GildItem {
+public class BackStagePass implements GildItem {
     private Item item;
 
     public BackStagePass(Item item) {
-        super(item);
         this.item = item;
     }
 

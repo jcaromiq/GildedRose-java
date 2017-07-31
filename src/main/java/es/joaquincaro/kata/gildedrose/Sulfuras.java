@@ -1,10 +1,9 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class Sulfuras extends GildItem {
+public class Sulfuras implements GildItem {
     private Item item;
 
     public Sulfuras(Item item) {
-        super(item);
         this.item = item;
     }
 

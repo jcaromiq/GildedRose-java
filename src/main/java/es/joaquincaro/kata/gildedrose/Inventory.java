@@ -25,9 +25,7 @@ public class Inventory {
 
 	public void updateQuality() {
 		for (Item item : items) {
-			GildItem gildItem = ItemsFactory.aNewFrom(item);
-			gildItem.changeSellIn();
-			gildItem.changeQuality();
+			ItemsFactory.aNewFrom(item).updateValues();
 		}
 	}
 }

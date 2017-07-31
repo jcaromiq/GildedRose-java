@@ -43,16 +43,12 @@ public class Inventory {
 
                 if (item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
                     if (item.getSellIn() < 10) {
-                        if (item.getQuality() < 50) {
-                            item.setQuality(item.getQuality() + 1);
-                        }
-                    }
+						increaseQualityByOne(item);
+					}
 
                     if (item.getSellIn() < 5) {
-                        if (item.getQuality() < 50) {
-                            item.setQuality(item.getQuality() + 1);
-                        }
-                    }
+						increaseQualityByOne(item);
+					}
                 }
             }
         }
@@ -70,16 +66,21 @@ public class Inventory {
                     item.setQuality(0);
                 }
             } else {
-                if (item.getQuality() < 50) {
-                    item.setQuality(item.getQuality() + 1);
-                }
-            }
+				increaseQualityByOne(item);
+			}
+        }
+	}
+
+	private void increaseQualityByOne(Item item) {
+		if (item.getQuality() < 50) {
+            item.setQuality(item.getQuality() + 1);
         }
 	}
 
 	private void updateSellIn(Item item) {
-		if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-            item.setSellIn(item.getSellIn() - 1);
-        }
+		if (item.getName() == "Sulfuras, Hand of Ragnaros") {
+			return;
+		}
+		item.setSellIn(item.getSellIn() - 1);
 	}
 }

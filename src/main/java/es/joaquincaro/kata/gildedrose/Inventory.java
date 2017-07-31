@@ -24,6 +24,9 @@ public class Inventory {
 
 	public void updateQuality() {
 		for (Item item : items) {
+			if (item.getName() != "Sulfuras, Hand of Ragnaros") {
+				item.setSellIn(item.getSellIn() - 1);
+			}
 			if (item.getName() != "Aged Brie"
 					&& item.getName() != "Backstage passes to a TAFKAL80ETC concert") {
 				if (item.getQuality() > 0) {
@@ -36,13 +39,13 @@ public class Inventory {
 					item.setQuality(item.getQuality() + 1);
 
 					if (item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
-						if (item.getSellIn() < 11) {
+						if (item.getSellIn() < 10) {
 							if (item.getQuality() < 50) {
 								item.setQuality(item.getQuality() + 1);
 							}
 						}
 
-						if (item.getSellIn() < 6) {
+						if (item.getSellIn() < 5) {
 							if (item.getQuality() < 50) {
 								item.setQuality(item.getQuality() + 1);
 							}
@@ -51,9 +54,6 @@ public class Inventory {
 				}
 			}
 
-			if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-				item.setSellIn(item.getSellIn() - 1);
-			}
 
 			if (item.getSellIn() < 0) {
 				if (item.getName() != "Aged Brie") {

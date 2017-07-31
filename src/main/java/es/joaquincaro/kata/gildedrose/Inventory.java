@@ -30,44 +30,48 @@ public class Inventory {
 	}
 
 	private void updateQuality(Item item) {
-		if (item.getName() == "Aged Brie" ||
-				item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
-
-			if (item.getQuality() < 50) {
-				item.setQuality(item.getQuality() + 1);
-
-				if (item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
+		switch (item.getName()) {
+			case "Aged Brie":
+				if (item.getQuality() < 50) {
+					increaseQualityByOne(item);
+				}
+				break;
+			case "Backstage passes to a TAFKAL80ETC concert":
+				if (item.getQuality() < 50) {
+					increaseQualityByOne(item);
 					if (item.getSellIn() < 10 && item.getQuality() < 50) {
 						increaseQualityByOne(item);
 					}
-
 					if (item.getSellIn() < 5 && item.getQuality() < 50) {
 						increaseQualityByOne(item);
 					}
 				}
-			}
-		} else {
-            if (item.getQuality() > 0 && item.getName() != "Sulfuras, Hand of Ragnaros") {
-				item.setQuality(item.getQuality() - 1);
-            }
-        }
+				break;
+			default:
+				if (item.getName() != "Sulfuras, Hand of Ragnaros") {
+					if (item.getQuality() > 0) {
+						item.setQuality(item.getQuality() - 1);
+					}
+				}
+				break;
+		}
 
 
 		if (item.getSellIn() < 0) {
-            if (item.getName() != "Aged Brie") {
-                if (item.getName() != "Backstage passes to a TAFKAL80ETC concert") {
-                    if (item.getQuality() > 0) {
-                        if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-                            item.setQuality(item.getQuality() - 1);
-                        }
-                    }
-                } else {
-                    item.setQuality(0);
-                }
-            } else {
+			if (item.getName() == "Aged Brie") {
 				increaseQualityByOne(item);
 			}
-        }
+			if (item.getName() == "Backstage passes to a TAFKAL80ETC concert") {
+				item.setQuality(0);
+			} else {
+				if (item.getQuality() > 0) {
+					if (item.getName() == "Sulfuras, Hand of Ragnaros") {
+						return;
+					}
+					item.setQuality(item.getQuality() - 1);
+				}
+			}
+		}
 	}
 
 	private void increaseQualityByOne(Item item) {

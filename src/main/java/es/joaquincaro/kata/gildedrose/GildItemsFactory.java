@@ -1,7 +1,7 @@
 package es.joaquincaro.kata.gildedrose;
 
 
-public class ItemsFactory {
+public class GildItemsFactory {
     public static GildItem aNewFrom(Item item) {
         switch (item.getName()) {
             case AgedBrie.TYPE:

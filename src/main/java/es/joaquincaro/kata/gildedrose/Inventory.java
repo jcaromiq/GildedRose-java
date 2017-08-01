@@ -27,7 +27,7 @@ public class Inventory {
 
 	public void updateQuality() {
 		Arrays.stream(items)
-				.map(ItemsFactory::aNewFrom)
+				.map(GildItemsFactory::aNewFrom)
 				.forEach(GildItem::updateValues);
 	}
 }

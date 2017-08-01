@@ -1,6 +1,8 @@
 package es.joaquincaro.kata.gildedrose;
 
 public class BackStagePass implements GildItem {
+    public static final String TYPE ="Backstage passes to a TAFKAL80ETC concert";
+
     private Item item;
 
     public BackStagePass(Item item) {

@@ -1,6 +1,8 @@
 package es.joaquincaro.kata.gildedrose;
 
 public class AgedBrie implements GildItem {
+    public static final String TYPE = "Aged Brie";
+
     private Item item;
 
     public AgedBrie(Item item) {
@@ -22,10 +24,5 @@ public class AgedBrie implements GildItem {
         }
     }
 
-    @Override
-    public void updateValues() {
-        changeSellIn();
-        changeQuality();
 
-    }
 }

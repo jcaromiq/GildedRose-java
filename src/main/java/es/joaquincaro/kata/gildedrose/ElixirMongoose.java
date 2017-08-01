@@ -1,10 +1,11 @@
 package es.joaquincaro.kata.gildedrose;
 
-public class CommonItem implements GildItem {
-
+public class ElixirMongoose implements  GildItem{
+    public static final String TYPE = "Elixir of the Mongoose";
     private Item item;
 
-    public CommonItem(Item item) {
+    public ElixirMongoose(Item item) {
+
         this.item = item;
     }
 
@@ -24,6 +25,4 @@ public class CommonItem implements GildItem {
         }
 
     }
-
-
 }

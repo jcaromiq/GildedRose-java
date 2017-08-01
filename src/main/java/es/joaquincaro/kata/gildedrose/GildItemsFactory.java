@@ -16,9 +16,16 @@ public class GildItemsFactory {
                 GildItem sulfuras = new Sulfuras(item);
                 return  sulfuras;
 
+            case DexteryVest.TYPE :
+                GildItem dexteryVest = new DexteryVest(item);
+                return dexteryVest;
+
+            case ElixirMongoose.TYPE :
+                GildItem elixirMongoose = new ElixirMongoose(item);
+                return  elixirMongoose;
+
             default:
-                GildItem generic = new CommonItem(item);
-                return  generic;
+                throw new IllegalArgumentException();
 
         }
     }
